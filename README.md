@@ -14,4 +14,4 @@ To use the project you need chang settings directory to db_settings and put your
 
 How to use the app 
 
-![first the login page] (/docs/hot-to-use-the-app/How to use it/1.png)
+!![image of login window](/docs/hot-to-use-the-app/How to use it/1.png)
