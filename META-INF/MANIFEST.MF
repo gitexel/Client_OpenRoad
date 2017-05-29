@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: lib/fontawesomefx-8.0.10.jar:lib/jfoenix.jar:lib/mysql-con
+ nector-java-5.1.40-bin.jar
+Main-Class: Client_OpenRoad.Main
+

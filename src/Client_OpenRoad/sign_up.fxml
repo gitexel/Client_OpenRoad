@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client_OpenRoad.sign_up">
+   <children>
+      <GridPane>
+          <columnConstraints>
+              <ColumnConstraints hgrow="NEVER" minWidth="350.0" prefWidth="350.0" />
+              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+              <GridPane fx:id="gridpanein" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="577.0" prefWidth="320.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="62.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                      <Label alignment="CENTER" contentDisplay="CENTER" text="Join OpenRoad " GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                          <font>
+                              <Font name="System Bold" size="22.0" />
+                          </font>
+                      </Label>
+                      <Label opacity="0.89" prefHeight="16.0" prefWidth="191.0" text="Freedom is yours" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                      <JFXButton fx:id="confirm" buttonType="RAISED" defaultButton="true" onAction="#next" opacity="0.65" prefHeight="32.0" prefWidth="108.0" ripplerFill="#59ca8e" style="-fx-background-color: gray;" text="Confirm" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
+                          <font>
+                              <Font name="System Bold" size="18.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </JFXButton>
+                      <HBox alignment="CENTER" prefHeight="18.0" prefWidth="353.0" spacing="8.0" GridPane.rowIndex="2">
+                          <children>
+                              <JFXTextField fx:id="firstname" focusColor="#59CA8E" maxWidth="181.0" minWidth="117.0" prefHeight="32.0" prefWidth="156.0" promptText="First name " unFocusColor="#b2aaaa" />
+                        <JFXTextField fx:id="lastname" focusColor="#59CA8E" maxWidth="189.0" minWidth="66.0" prefHeight="32.0" prefWidth="177.0" promptText="Last name" unFocusColor="#b2aaaa" />
+                          </children>
+                      </HBox>
+                      <JFXTextField fx:id="email1" focusColor="#59CA8E" maxWidth="340.0" minWidth="287.0" prefHeight="32.0" prefWidth="322.0" promptText="Email address" unFocusColor="#b2aaaa" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                      <JFXTextField fx:id="openRid" focusColor="#59CA8E" maxWidth="340.0" minWidth="147.0" prefHeight="32.0" prefWidth="265.0" promptText="Username" unFocusColor="#b2aaaa" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                      <JFXDatePicker fx:id="datePicker" defaultColor="#59ca8e" editable="false" opacity="0.76" prefHeight="32.0" prefWidth="333.0" promptText="Birthday" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                      <JFXComboBox fx:id="cb" focusColor="#59CA8E" opacity="0.45" prefHeight="32.0" prefWidth="327.0" promptText="Country" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                      <JFXPasswordField fx:id="password1" focusColor="#59CA8E" maxWidth="337.0" minWidth="254.0" prefHeight="32.0" prefWidth="337.0" promptText="Set new Password" unFocusColor="#b2aaaa" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                      <JFXPasswordField fx:id="password2" focusColor="#59CA8E" maxWidth="335.0" minWidth="206.0" prefHeight="30.0" prefWidth="335.0" promptText="Confirm password" unFocusColor="#b2aaaa" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                  </children>
+                  <padding>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+              </GridPane>
+              <StackPane prefHeight="577.0" prefWidth="640.0" style="-fx-background-color: #59CA8E;" GridPane.columnIndex="1">
+                  <children>
+                      <ImageView fitHeight="241.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@resources/pip_resources_key_documents.png" />
+                          </image>
+                      </ImageView>
+                  </children>
+              </StackPane>
+            <ProgressIndicator fx:id="prograssind" maxHeight="164.0" maxWidth="168.0" prefHeight="164.0" prefWidth="168.0" style="-fx-progress-color: #59CA8E;" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ProgressIndicator>
+          </children>
+      </GridPane>
+   </children>
+</StackPane>

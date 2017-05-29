@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" minHeight="560.0" minWidth="950.0" prefHeight="560.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client_OpenRoad.dash">
+    <children>
+        <GridPane fx:id="main_window_gridpane" minHeight="560.0" minWidth="950.0" prefHeight="560.0" prefWidth="950.0" StackPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="214.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="724.0" minWidth="10.0" prefWidth="682.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <JFXTabPane fx:id="tabPane" cacheHint="QUALITY" depthTest="ENABLE" opacity="0.93" prefHeight="567.0" prefWidth="669.0" rotateGraphic="true" stylesheets="@css/jfxtabpane.css" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowSpan="2147483647">
+                    <tabs>
+                        <Tab fx:id="tabhome" closable="false" text="Home">
+                            <content>
+                                <GridPane>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane fx:id="home_gridpane">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="368.0" />
+                                                <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="408.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="267.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="308.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="94.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="228.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="59.0" minHeight="7.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="59.0" minHeight="0.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label opacity="0.83" prefHeight="60.0" prefWidth="56.0" text="My state" />
+                                                        <Label opacity="0.83" prefHeight="83.0" prefWidth="73.0" text="Application" GridPane.rowIndex="3" />
+                                                        <Label opacity="0.83" prefHeight="102.0" prefWidth="41.0" text="Porfile" GridPane.rowIndex="2" />
+                                                        <Label opacity="0.83" prefHeight="86.0" prefWidth="65.0" text="Payments" GridPane.rowIndex="4" />
+                                                        <HBox GridPane.columnIndex="1">
+                                                            <children>
+                                                                <JFXCheckBox fx:id="status_complete" disable="true" indeterminate="true" opacity="0.73" prefHeight="49.0" prefWidth="108.0" text="Complete" textOverrun="CLIP" wrapText="true" />
+                                                                <JFXCheckBox fx:id="status_verified" disable="true" opacity="0.73" prefHeight="50.0" prefWidth="120.0" text="Verfied" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                            <children>
+                                                                <JFXCheckBox fx:id="procom" disable="true" opacity="0.73" prefHeight="75.0" prefWidth="110.0" text="Complete" />
+                                                                <JFXCheckBox fx:id="prover" disable="true" opacity="0.73" prefHeight="72.0" prefWidth="120.0" text="Verfied" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <children>
+                                                                <JFXCheckBox fx:id="appcom" disable="true" opacity="0.73" prefHeight="77.0" prefWidth="110.0" text="Complete" />
+                                                                <JFXCheckBox fx:id="appver" disable="true" opacity="0.73" prefHeight="76.0" prefWidth="119.0" text="Verfied" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                            <children>
+                                                                <JFXCheckBox fx:id="paycom" disable="true" opacity="0.73" prefHeight="89.0" prefWidth="110.0" text="Complete" />
+                                                                <JFXCheckBox fx:id="payver" disable="true" opacity="0.73" prefHeight="83.0" prefWidth="119.0" text="Verfied" />
+                                                            </children>
+                                                        </HBox>
+                                                        <Separator prefHeight="0.0" prefWidth="395.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                                                            <padding>
+                                                                <Insets right="25.0" />
+                                                            </padding>
+                                                        </Separator>
+                                                    </children>
+                                                </GridPane>
+                                                <GridPane prefHeight="222.0" prefWidth="376.0" GridPane.columnIndex="2">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="254.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="213.0" minHeight="9.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <JFXTreeTableView fx:id="requests_table" opacity="0.93" prefHeight="241.0" prefWidth="402.0" showRoot="false" stylesheets="@css/tree_table.css">
+                                                            <columns>
+                                                                <TreeTableColumn fx:id="requests_column_date" editable="false" prefWidth="149.0" resizable="false" style="-fx-alignment: CENTER;" text="Taken Date " />
+                                                                <TreeTableColumn fx:id="requests_column_valid_until" editable="false" minWidth="125.0" prefWidth="150.0" resizable="false" style="-fx-alignment: CENTER;" text="Expire Date" />
+                                                                <TreeTableColumn fx:id="requests_column_state" editable="false" minWidth="0.0" prefWidth="56.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Status" />
+                                                            </columns>
+                                                            <opaqueInsets>
+                                                                <Insets bottom="6.0" />
+                                                            </opaqueInsets>
+                                                        </JFXTreeTableView>
+                                                    </children>
+                                                    <opaqueInsets>
+                                                        <Insets bottom="10.0" />
+                                                    </opaqueInsets>
+                                                    <padding>
+                                                        <Insets left="6.0" />
+                                                    </padding>
+                                                </GridPane>
+                                                <JFXTreeTableView fx:id="stuffTableView1" currentItemsCount="7" editable="true" opacity="0.83" prefHeight="295.0" prefWidth="730.0" showRoot="false" stylesheets="@css/tree_table.css" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+                                                    <columns>
+                                                        <TreeTableColumn fx:id="trip_id_1" editable="false" prefWidth="24.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="ID" />
+                                                        <TreeTableColumn fx:id="trips_date_column1" editable="false" prefWidth="149.0" resizable="false" style="-fx-alignment: CENTER;" text="Date" />
+                                                        <TreeTableColumn fx:id="flight_duration" editable="false" prefWidth="313.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Duration" />
+                                                        <TreeTableColumn fx:id="airport_name_from_Column1" editable="false" maxWidth="209.0" minWidth="0.0" prefWidth="51.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="From" />
+                                                        <TreeTableColumn fx:id="airport_name_to_Column1" editable="false" minWidth="0.0" prefWidth="53.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="To" />
+                                                        <TreeTableColumn fx:id="trip_type_Column1" editable="false" prefWidth="47.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Class" />
+                                                        <TreeTableColumn fx:id="price_column1" editable="false" prefWidth="57.0" resizable="false" style="-fx-alignment: CENTER;" text="Price" />
+                                                        <TreeTableColumn fx:id="trips_date_column12" editable="false" prefWidth="320.0" resizable="false" text="Date" />
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                    </columnResizePolicy>
+                                                </JFXTreeTableView>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                        </GridPane>
+                                        <ProgressIndicator fx:id="home_progress" maxHeight="250.0" maxWidth="250.0" style="-fx-progress-color: #59CA8E;" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabtrips" closable="false" disable="true" text="Trips">
+                            <content>
+                                <GridPane>
+                                    <GridPane.margin>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </GridPane.margin>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane fx:id="trip_gridpane" prefHeight="517.0" prefWidth="704.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="85.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="222.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="167.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="207.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="3.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label prefHeight="40.0" prefWidth="100.0" text=" From" />
+                                                <Label text="To" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                                                <JFXDatePicker fx:id="trips_departure" editable="false" prefHeight="33.0" prefWidth="159.0" promptText="1/30/2016" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <JFXDatePicker fx:id="trips_arrival" editable="false" prefHeight="32.0" prefWidth="163.0" promptText="1/30/2016" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <Label prefHeight="46.0" prefWidth="55.0" text="Arrivale" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <JFXComboBox fx:id="trips_country_from" focusColor="#59CA8E" prefHeight="32.0" prefWidth="161.0" promptText="Country" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                                <JFXComboBox fx:id="trips_country_to" focusColor="#59CA8E" prefHeight="32.0" prefWidth="155.0" promptText="Country" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                                                <JFXButton fx:id="search_trips" alignment="CENTER" buttonType="RAISED" onAction="#search_trips_button" prefHeight="37.0" prefWidth="132.0" style="-fx-background-color: #59CA8E;" text="Search" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></JFXButton>
+                                                <Label prefHeight="42.0" prefWidth="101.0" text=" Depriture" GridPane.rowIndex="1">
+                                                    <opaqueInsets>
+                                                        <Insets left="5.0" />
+                                                    </opaqueInsets>
+                                                </Label>
+                                                <JFXTreeTableView fx:id="stuffTableView" onMouseClicked="#detail_bar" opacity="0.83" prefHeight="295.0" prefWidth="730.0" showRoot="false" stylesheets="@css/tree_table.css" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                                                    <columns>
+                                                        <TreeTableColumn fx:id="trip_id" editable="false" prefWidth="40.0" resizable="false" style="-fx-alignment: CENTER;" text="ID" />
+                                                        <TreeTableColumn fx:id="trip_duration_column" editable="false" prefWidth="344.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Duration" />
+                                                        <TreeTableColumn fx:id="airport_name_from_Column" editable="false" prefWidth="78.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="From" />
+                                                        <TreeTableColumn fx:id="airport_name_to_Column" editable="false" minWidth="0.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="To" />
+                                                        <TreeTableColumn fx:id="trip_type_Column" editable="false" minWidth="9.0" prefWidth="73.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Class" />
+                                                        <TreeTableColumn fx:id="price_column" editable="false" maxWidth="481.0" minWidth="40.0" resizable="false" style="-fx-alignment: CENTER;" text="Price" />
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                    </columnResizePolicy>
+                                                </JFXTreeTableView>
+                                                <JFXButton fx:id="buy_trip" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" disable="true" onAction="#buy_trip_button" prefHeight="18.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Book" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></JFXButton>
+                                                <JFXTextField fx:id="trip_details" editable="false" focusColor="#59CA8E" maxWidth="502.0" minWidth="502.0" prefHeight="35.0" prefWidth="502.0" promptText="Selected Trip for bught" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                        </GridPane>
+                                        <ProgressIndicator fx:id="trip_progress" maxHeight="250.0" maxWidth="250.0" style="-fx-progress-color: #59CA8E;" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabprofile" closable="false" text="Profile">
+                            <content>
+                                <GridPane>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane fx:id="all_profile_gridpane">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="152.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="97.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="299.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="108.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="91.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="432.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <GridPane fx:id="profile_gridpane" alignment="CENTER" disable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="473.0" prefWidth="750.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="227.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="107.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="274.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="61.0" minHeight="0.0" prefHeight="3.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="61.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="70.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <HBox alignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+                                                            <children>
+                                                                <JFXButton fx:id="psave" alignment="CENTER" disable="true" onAction="#save_profile_button" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #59CA8E;" text="Save" textFill="WHITE" />
+                                                            </children>
+                                                        </HBox>
+                                                        <Label prefHeight="16.0" prefWidth="151.0" text="Name" GridPane.rowIndex="1" />
+                                                        <Label prefHeight="16.0" prefWidth="154.0" text="Gender" GridPane.rowIndex="4" />
+                                                        <Label prefHeight="16.0" prefWidth="148.0" text="Birthday" GridPane.rowIndex="5" />
+                                                        <Label prefHeight="16.0" prefWidth="170.0" text="Username" GridPane.rowIndex="6" />
+                                                        <Label prefHeight="16.0" prefWidth="155.0" text="E-mail" GridPane.rowIndex="7" />
+                                                        <Label prefHeight="16.0" prefWidth="103.0" text="Phone Number" GridPane.rowIndex="9" />
+                                                        <Label prefHeight="16.0" prefWidth="148.0" text="Country" GridPane.rowIndex="8" />
+                                                        <JFXComboBox fx:id="gender" focusColor="#59CA8E" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="218.0" promptText="Male or Female" visibleRowCount="3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                                        <JFXDatePicker fx:id="datePicker" editable="false" prefHeight="32.0" prefWidth="233.0" promptText="Birthday" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="555.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <JFXTextField fx:id="fname" alignment="CENTER" focusColor="#59CA8E" maxWidth="600.0" minWidth="170.0" prefHeight="32.0" prefWidth="220.0" promptText="First name" />
+                                                                <JFXTextField fx:id="mname" alignment="CENTER" focusColor="#59CA8E" maxWidth="600.0" minWidth="170.0" prefHeight="32.0" prefWidth="220.0" promptText="Middle name" />
+                                                                <JFXTextField fx:id="lname" alignment="CENTER" focusColor="#59CA8E" maxWidth="600.0" minWidth="170.0" prefHeight="32.0" prefWidth="220.0" promptText="Last name" />
+                                                            </children>
+                                                        </HBox>
+                                                        <JFXTextField fx:id="jfx_username" alignment="CENTER" editable="false" focusColor="#59CA8E" maxWidth="564.0" minWidth="0.0" prefHeight="32.0" prefWidth="281.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                        <JFXComboBox fx:id="country" focusColor="#59CA8E" prefHeight="32.0" prefWidth="216.0" promptText="Your country" visibleRowCount="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                                                        <JFXTextField fx:id="email" focusColor="#59CA8E" maxWidth="759.0" minWidth="0.0" prefHeight="32.0" prefWidth="759.0" promptText="xxxxxx@domain.com" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                        <JFXTextField fx:id="phone" alignment="CENTER" focusColor="#59CA8E" maxWidth="564.0" minWidth="0.0" prefHeight="32.0" prefWidth="281.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                        <GridPane prefHeight="0.0" prefWidth="381.0" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" GridPane.rowSpan="5">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="220.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="54.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <JFXPasswordField fx:id="old_password" disable="true" focusColor="#59CA8E" maxWidth="380.0" minWidth="126.0" prefHeight="42.0" prefWidth="217.0" promptText="Your Password" GridPane.rowIndex="1" />
+                                                                <JFXPasswordField fx:id="new_password" disable="true" focusColor="#59CA8E" maxWidth="380.0" minWidth="189.0" prefHeight="43.0" prefWidth="189.0" promptText="New Passowrd" GridPane.rowIndex="2" />
+                                                                <JFXPasswordField fx:id="new_password_retype" disable="true" focusColor="#59CA8E" maxWidth="380.0" minWidth="190.0" prefHeight="50.0" prefWidth="190.0" promptText="Confirm Password" GridPane.rowIndex="3" />
+                                                                <Label fx:id="password_label" prefHeight="16.0" prefWidth="219.0" />
+                                                                <JFXButton fx:id="new_password_save" disable="true" onAction="#save_new_password" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #59CA8E;" text="Confirm" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                                            </children>
+                                                        </GridPane>
+                                                        <JFXToggleButton fx:id="toggleButton_password_enable" onAction="#enable_password_change" prefHeight="58.0" prefWidth="200.0" text="Change Password" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                                                        <Separator orientation="VERTICAL" prefHeight="306.0" prefWidth="132.0" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.rowSpan="6">
+                                                            <padding>
+                                                                <Insets left="1.0" />
+                                                            </padding>
+                                                        </Separator>
+                                                        <Separator prefHeight="4.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </padding>
+                                                </GridPane>
+                                                <Label text="National ID" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                                                <JFXButton fx:id="change_profile_image" onAction="#profile_photo" prefHeight="90.0" prefWidth="150.0" text="Change" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                                                    <graphic>
+                                                        <ImageView fx:id="profile_image" fitHeight="70.0" fitWidth="70.0" focusTraversable="true" nodeOrientation="INHERIT" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@resources/default-profile.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </JFXButton>
+                                                <JFXTextField fx:id="national_id" focusColor="#59CA8E" maxWidth="309.0" minWidth="286.0" prefHeight="24.0" prefWidth="286.0" GridPane.columnIndex="3" />
+                                                <Label prefHeight="16.0" prefWidth="98.0" text="Profile Picture" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
+                                                <JFXButton fx:id="check_id" onAction="#id_check" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #59CA8E;" text="Check" textFill="WHITE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <Label text="ID State" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <ImageView fitHeight="43.0" fitWidth="72.0" opacity="0.56" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                    <image>
+                                                        <Image url="@resources/icon_179-512.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="id_state" alignment="CENTER" prefHeight="19.0" prefWidth="311.0" text="National id state" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <ProgressIndicator fx:id="profile_progress" maxHeight="250.0" maxWidth="250.0" style="-fx-progress-color: #59CA8E;" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabapplication" closable="false" disable="true" onSelectionChanged="#check_tab_update" text="Application">
+                            <content>
+                                <GridPane>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane fx:id="application_gridpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="522.0" prefWidth="712.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="0.0" prefWidth="16.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="176.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="48.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="445.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="1.0" prefWidth="86.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Id photo" GridPane.columnIndex="1" />
+                                                <Label text="address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Job" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label text="Education" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="CV" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Health Insurance" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label text="English Certifcate" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="375.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                    <children>
+                                                        <JFXButton fx:id="idphoto" onAction="#open_photo_id" prefHeight="26.0" prefWidth="78.0" text="Upload">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor></JFXButton>
+                                                        <Label fx:id="idphotfilename" contentDisplay="CENTER" prefHeight="24.0" prefWidth="324.0" />
+                                                        <ImageView fitHeight="53.0" fitWidth="64.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@resources/icon_179-512.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                </HBox>
+                                                <JFXTextField fx:id="address" focusColor="#59CA8E" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <JFXTextField fx:id="job" focusColor="#59CA8E" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <JFXTextField fx:id="edu" focusColor="#59CA8E" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="395.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                    <children>
+                                                        <JFXButton fx:id="cv" onAction="#open_cv" text="Upload">
+                                                            <HBox.margin>
+                                                                <Insets />
+                                                            </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                                        </JFXButton>
+                                                        <Label fx:id="cvfilename" contentDisplay="CENTER" prefHeight="24.0" prefWidth="309.0" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                                    <children>
+                                                        <JFXButton fx:id="healhcert" onAction="#open_health" text="Upload">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor></JFXButton>
+                                                        <Label fx:id="healthfilename" contentDisplay="CENTER" prefHeight="24.0" prefWidth="304.0" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="432.0" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
+                                                    <children>
+                                                        <JFXComboBox fx:id="venglish" focusColor="#59CA8E" onHidden="#english_check_to_enable_upload" prefHeight="32.0" prefWidth="119.0" promptText="Certficate" visibleRowCount="3">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor></JFXComboBox>
+                                                        <JFXButton fx:id="entest" disable="true" onAction="#open_english" prefHeight="26.0" prefWidth="79.0" text="Upload">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor></JFXButton>
+                                                        <Label fx:id="englishprovefilename" contentDisplay="CENTER" prefHeight="24.0" prefWidth="215.0" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                                                    <children>
+                                                        <JFXButton fx:id="appsave" buttonType="RAISED" onAction="#save_application_button" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #59CA8E;" text="Save &amp; Apply" textAlignment="CENTER" textFill="WHITE">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor></JFXButton>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                            <opaqueInsets>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </opaqueInsets>
+                                        </GridPane>
+                                        <ProgressIndicator fx:id="appliction_progress" maxHeight="250.0" maxWidth="250.0" style="-fx-progress-color: #59CA8E;" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabpayment" closable="false" disable="true" text="Payments">
+                            <content>
+                                <GridPane>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane fx:id="payment_gridpane" alignment="CENTER">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.666748046875" minWidth="10.0" prefWidth="133.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="33.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.666748046875" minWidth="10.0" prefWidth="300.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.666748046875" minWidth="0.0" prefWidth="126.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="44.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.666748046875" minWidth="10.0" prefWidth="114.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="131.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="227.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="232.0" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Paypal Account" GridPane.rowIndex="1">
+                                                    <GridPane.margin>
+                                                        <Insets left="5.0" />
+                                                    </GridPane.margin>
+                                                </Label>
+                                                <Label prefHeight="26.0" prefWidth="79.0" text="Credit Card " GridPane.rowIndex="2">
+                                                    <GridPane.margin>
+                                                        <Insets left="5.0" />
+                                                    </GridPane.margin>
+                                                </Label>
+                                                <Label text="Bank Account " GridPane.rowIndex="3">
+                                                    <GridPane.margin>
+                                                        <Insets left="5.0" />
+                                                    </GridPane.margin>
+                                                </Label>
+                                                <Label prefHeight="16.0" prefWidth="131.0" text="------&gt; Prototype" GridPane.columnIndex="2" />
+                                                <JFXTextField fx:id="paypal_account_email" disable="true" focusColor="#59CA8E" labelFloat="true" prefHeight="30.0" prefWidth="489.0" promptText="XXXXXX@mail.com" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                                                <JFXTextField fx:id="Bank_account_number" disable="true" focusColor="#59CA8E" labelFloat="true" prefHeight="30.0" promptText="Account number" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="532.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                                                    <children>
+                                                        <JFXComboBox fx:id="visa_or_mastercard" disable="true" focusColor="#59CA8E" prefHeight="30.0" prefWidth="157.0" promptText="Visa or Mastercard" />
+                                                        <JFXTextField fx:id="credit_card_number" disable="true" focusColor="#59CA8E" labelFloat="true" maxWidth="318.0" minWidth="200.0" prefHeight="30.0" prefWidth="231.0" promptText="Card Number" />
+                                                        <JFXTextField fx:id="credit_card_cvv" disable="true" focusColor="#59CA8E" maxWidth="157.0" minWidth="49.0" prefHeight="30.0" prefWidth="57.0" promptText="CVV" />
+                                                    </children>
+                                                </HBox>
+                                                <JFXToggleButton fx:id="use_paypal" onAction="#check_paypal_option" prefHeight="60.0" prefWidth="102.0" text="Use" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                                <JFXToggleButton fx:id="use_bank_account" onAction="#check_bank_option" prefHeight="0.0" prefWidth="99.0" text="Use" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                                <HBox alignment="CENTER" prefHeight="54.0" prefWidth="730.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                                                    <children>
+                                                        <JFXButton fx:id="save_payment" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#save_payment_button" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #59CA8E;" text="Save" textAlignment="CENTER" textFill="WHITE">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor></JFXButton>
+                                                    </children>
+                                                </HBox>
+                                                <JFXToggleButton fx:id="use_credit_card" onAction="#check_credit_option" prefHeight="18.0" prefWidth="96.0" text="Use" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                                <Label prefHeight="16.0" prefWidth="131.0" text="Payment methods">
+                                                    <GridPane.margin>
+                                                        <Insets left="5.0" />
+                                                    </GridPane.margin>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                        </GridPane>
+                                        <ProgressIndicator fx:id="payment_progress" maxHeight="250.0" maxWidth="250.0" style="-fx-progress-color: #59CA8E;" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tababoutus" closable="false" text="Contact us">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <StackPane layoutX="-1.0" layoutY="1.0" prefHeight="531.0" prefWidth="718.0">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" prefHeight="156.0" prefWidth="415.0" text="Contact Us: googexel@gmail.com" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                                    <font>
+                                                        <Font name="System Bold" size="20.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </StackPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+                <GridPane fx:id="gridPaneleft" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="567.0" prefWidth="227.0" style="-fx-background-color: gray;" GridPane.halignment="LEFT">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="80.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="main_id" alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="273.0" text="ID" GridPane.rowIndex="1" />
+                        <Label fx:id="main_email" alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="273.0" text="E-mail" GridPane.rowIndex="2" />
+                        <Label fx:id="main_country" alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="273.0" text="Country" GridPane.rowIndex="3" />
+                        <Label fx:id="main_phone" alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="273.0" text="Phone number" GridPane.rowIndex="4" />
+                        <JFXButton fx:id="open_profile_picture" alignment="CENTER" contentDisplay="TOP" onAction="#go_to_profile" prefHeight="72.0" prefWidth="273.0" text="Name" textAlignment="CENTER">
+                            <graphic>
+                                <ImageView fx:id="main_profile_image" fitHeight="97.0" fitWidth="103.0" focusTraversable="true" nodeOrientation="INHERIT" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@resources/default-profile.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="OPEN_HAND" />
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton onAction="#log_out" prefHeight="98.0" prefWidth="273.0" text="Logout" GridPane.rowIndex="5">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                    </children>
+                </GridPane>
+            </children>
+        </GridPane>
+    </children>
+</StackPane>
