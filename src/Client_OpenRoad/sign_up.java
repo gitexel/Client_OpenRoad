@@ -60,7 +60,7 @@ public class sign_up extends inputs_validation {
 
     private Executor exec;
 
-    public sign_up() throws FileNotFoundException {
+    public sign_up() {
 
     }
 
