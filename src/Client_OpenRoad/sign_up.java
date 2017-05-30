@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,7 +60,7 @@ public class sign_up extends inputs_validation {
 
     private Executor exec;
 
-    public sign_up() {
+    public sign_up() throws FileNotFoundException {
 
     }
 

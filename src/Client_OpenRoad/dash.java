@@ -403,12 +403,12 @@ public class dash extends inputs_validation {
         });
 
         warning_dialog("Welcome " + db.getUsername(), "\nPlease read these notes carefully!\n" +
-                "\n  1.Validation for National ID required (first, middle and last name),\n" +
-                "    country, gender and birthday will marked as valid from the database only.]\n" +
-                "2. to book trips you should fill application and payment(only one method) tab.\n" +
-                "3. The payment tab is just a prototype!, but you need to fill just one method.\n" +
-                "4. you will fill application only once until your validation status expired.\n" +
-                "5. application and payments inputs should be marked as valid from employer side!.\n" +
+                "\n1.Validation for National ID required (first, middle and last name),\n" +
+                " country, gender and birthday will marked as valid from the database only.]\n" +
+                "2.to book trips you should fill application and payment(only one method) tab.\n" +
+                "3.The payment tab is just a prototype!, but you need to fill just one method.\n" +
+                "4.you will fill application only once until your validation status expired.\n" +
+                "5.application and payments inputs should be marked as valid from employer side!.\n" +
                 "    and we don't have yet employer side app so validation for inputs will \n be automatically marked as valid!.\n" +
                 "6. you can change your profile photo after you got verified.", false);
 
