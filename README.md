@@ -100,7 +100,7 @@ Summary
 
 
 
-* Trips tab (to test it you need to fill trips table with some tris)
+* Trips tab (to test it you need to fill trips table with some trips)
 
 
 
