@@ -6,8 +6,10 @@ OpenRoad is a client javafx app for verifying and authenticating passengers to t
 To use the project you need chang settings directory to db_settings and put your db info insde db.properties file
 
 ------
+
 How to use the app 
 -----
+
 * login  
 
 ![screenshot from 2017-05-30 05-04-41](https://cloud.githubusercontent.com/assets/14273726/26566696/efd2300a-44fd-11e7-9074-74826ff97c26.png)
@@ -115,13 +117,14 @@ after you found a trip
 ![screenshot from 2017-05-30 09-59-15](https://cloud.githubusercontent.com/assets/14273726/26575687/e4abae64-452e-11e7-9ce7-3640bb96d0b3.png)
 
 
-after you booked the trip the main tab will updated 
+after you booked the trip the main tabe should update to this 
 
 
 
 ![screenshot from 2017-05-30 09-59-52](https://cloud.githubusercontent.com/assets/14273726/26575721/0a948074-452f-11e7-8721-cebf0b39288d.png)
 
 
+Download the executable jar [OpenRoad.zip](https://github.com/gitexel/Client_OpenRoad/files/1037826/OpenRoad.zip)
 
 
 For more info please conatct me (googexel@gmail.com)
