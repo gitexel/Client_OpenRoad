@@ -282,7 +282,10 @@
                                                     <children>
                                                         <HBox alignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="10">
                                                             <children>
-                                                                <JFXButton fx:id="psave" alignment="CENTER" disable="true" onAction="#save_profile_button" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #59CA8E;" text="Save" textFill="WHITE" />
+                                                                <JFXButton fx:id="psave" alignment="CENTER" disable="true" onAction="#save_profile_button" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: #59CA8E;" text="Save" textFill="WHITE">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></JFXButton>
                                                             </children>
                                                         </HBox>
                                                         <Label prefHeight="16.0" prefWidth="151.0" text="Name" GridPane.rowIndex="1" />
@@ -323,7 +326,10 @@
                                                                 <JFXPasswordField fx:id="new_password" disable="true" focusColor="#59CA8E" maxWidth="380.0" minWidth="189.0" prefHeight="43.0" prefWidth="189.0" promptText="New Passowrd" GridPane.rowIndex="2" />
                                                                 <JFXPasswordField fx:id="new_password_retype" disable="true" focusColor="#59CA8E" maxWidth="380.0" minWidth="190.0" prefHeight="50.0" prefWidth="190.0" promptText="Confirm Password" GridPane.rowIndex="3" />
                                                                 <Label fx:id="password_label" prefHeight="16.0" prefWidth="219.0" />
-                                                                <JFXButton fx:id="new_password_save" disable="true" onAction="#save_new_password" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #59CA8E;" text="Confirm" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                                                <JFXButton fx:id="new_password_save" disable="true" onAction="#save_new_password" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #59CA8E;" text="Confirm" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></JFXButton>
                                                             </children>
                                                         </GridPane>
                                                         <JFXToggleButton fx:id="toggleButton_password_enable" onAction="#enable_password_change" prefHeight="58.0" prefWidth="200.0" text="Change Password" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
@@ -350,7 +356,10 @@
                                                 </JFXButton>
                                                 <JFXTextField fx:id="national_id" focusColor="#59CA8E" maxWidth="309.0" minWidth="286.0" prefHeight="24.0" prefWidth="286.0" GridPane.columnIndex="3" />
                                                 <Label prefHeight="16.0" prefWidth="98.0" text="Profile Picture" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
-                                                <JFXButton fx:id="check_id" onAction="#id_check" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #59CA8E;" text="Check" textFill="WHITE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <JFXButton fx:id="check_id" onAction="#id_check" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #59CA8E;" text="Check" textFill="WHITE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></JFXButton>
                                                 <Label text="ID State" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                 <ImageView fitHeight="43.0" fitWidth="72.0" opacity="0.56" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                                     <image>

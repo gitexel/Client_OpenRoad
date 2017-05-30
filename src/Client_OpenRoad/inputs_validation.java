@@ -28,8 +28,8 @@ public class inputs_validation extends database_input_validation {
      * e_mail_v() ----> check if email valid not (sam.mail- sam..mail@yahoo.com - @yahoo.com - sam@.com - sam@com, ETC).
      * username_v() ----> all letters upper and lower valid characters >= 3  and  numbers but not contain (SPECIAL CHARACTERS).
      * password_v() ----> should not less than 8 and contain upper and lower characters and  special character (@#$!*()~%^&+=) must occur at least once .
-     * name_v() and regular_v() ----> should have characters only.
-     * phone_v() ----> should have  11 to 15number .
+     * name_v()  ----> should have characters only.
+     * phone_v() ----> should have  11 to 15 number .
      * file_name_v() ---->   characters only  not greater than 35 or less than 0
      */
 
