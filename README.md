@@ -78,12 +78,12 @@ Summary
 
 
 
-*Payment tab(it is just a prototype but you need to fill any of the methods)
+* Payment tab(it is just a prototype but you need to fill any of the methods)
 
 ![screenshot from 2017-05-30 09-07-25](https://cloud.githubusercontent.com/assets/14273726/26575378/a3105924-452d-11e7-8955-1405b76f877d.png)
 
 
-**Here is home tab after you got verified and payment filled 
+** Here is home tab after you got verified and payment filled 
 
 
 ![screenshot from 2017-05-30 09-08-21](https://cloud.githubusercontent.com/assets/14273726/26575443/e9a74168-452d-11e7-85f1-9fbc9fe6549b.png)
