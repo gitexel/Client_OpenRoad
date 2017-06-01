@@ -34,12 +34,12 @@ How to use the app
 
 Please read these notes carefully! 
 ----------------------------------
-1.Validation for National ID required (first, middle and last name), country, gender and birthday will be marked as valid from the database only.   
-2.to book trips you should fill application and payment(only one method) tab.   
-3.The payment tab is just a prototype! but you need to fill just one method.   
-4.you will fill application only once until your validation status expired.   
-5.application and payments inputs should be marked as valid from employer side!.   
-and we don't have yet employer side app so validation for inputs will be automatically marked as valid!.   
+1. Validation for National ID required (first, middle and last name), country, gender and birthday will be marked as valid from the database only.   
+2. to book trips you should fill application and payment(only one method) tab.   
+3. The payment tab is just a prototype! but you need to fill just one method.   
+4. you will fill application only once until your validation status expired.   
+5. application and payments inputs should be marked as valid from employer side! 
+ and we don't have yet employer side app so validation for inputs will be automatically marked as valid!.   
 6. you can change your profile photo after you got verified.   
 
 
@@ -128,17 +128,3 @@ Download the executable jar [OpenRoad.zip](https://github.com/gitexel/Client_Ope
 
 
 For more info please contact me (googexel@gmail.com)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
