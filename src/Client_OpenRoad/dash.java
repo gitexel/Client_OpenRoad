@@ -299,7 +299,7 @@ public class dash extends inputs_validation {
     private Executor exec; // java.util.concurrent.Executor typically provides a pool of threads...
     private Task<Boolean> valid_citizen_task = null;
     private Task<Void> update_profile_task, update_application_task, update_payment_task;
-    private final String icon_url = "file:" + System.getProperty("user.dir") + separator + "src" + separator + "icon.png";
+    private final String icon_url = "file:" + System.getProperty("user.dir")+separator+"src"+separator+"icon.png";
 
     public dash() {
 
@@ -662,7 +662,10 @@ public class dash extends inputs_validation {
 
       /*  inputhealth = */
         health_path = file_chooser("Choose file",
-                new FileChooser.ExtensionFilter("images and pdf", "*.png", "*.jpg", "*.gif", "*.pdf"));
+                new FileChooser.ExtensionFilter("images and pdf",
+                        "*.png", "*.jpg", "*.gif", "*.pdf"
+                )
+        );
         if (series) {
             healthfilename.setText(filename);
         }
@@ -674,7 +677,11 @@ public class dash extends inputs_validation {
 
       /*  inputenglish = */
         english_path = file_chooser("Choose file",
-                new FileChooser.ExtensionFilter("png,jpg,gif,pdf", "*.png", "*.jpg", "*.gif", "*.pdf"));
+                new FileChooser.ExtensionFilter(
+                            "png,jpg,gif,pdf"
+                        , "*.png", "*.jpg", "*.gif", "*.pdf"
+                )
+        );
         if (series) {
             englishprovefilename.setText(filename);
         }
@@ -764,7 +771,8 @@ public class dash extends inputs_validation {
                 get_profile_photo_boolean_task.setOnFailed(event -> {
 
                     finish_home_task_action();
-                    warning_dialog("Connecton error", "Failed to connect to the server!, please try again later", false);
+                    warning_dialog("Connecton error", "Failed to connect to the server!, please try again later",
+                            false);
 
                 });
 
@@ -840,8 +848,10 @@ public class dash extends inputs_validation {
                     });
 
                     citizen_customer_status_task.setOnFailed(event2 -> {
-                        warning_dialog("Connection Error",
-                                "Faild to connect to the server", false);
+                        warning_dialog("Connection Error"
+                                ,"Faild to connect to the server",
+                                false
+                        );
                         finish_profile_task_action();
                     });
                     exec.execute(citizen_customer_status_task);
@@ -1059,8 +1069,10 @@ public class dash extends inputs_validation {
 
         update_payment_task.setOnFailed(event -> {
             finish_payment_task_action();
-            warning_dialog("Connecton error = update payment tab",
-                    "Faild to connect to the server!, please try again later", false);
+            warning_dialog("Connecton error = update payment tab"
+                    , "Faild to connect to the server!, please try again later"
+                    , false
+            );
 
         });
 
@@ -1297,7 +1309,10 @@ public class dash extends inputs_validation {
                 if (valid_citizen_task.getValue()) {
 
 
-                    warning_dialog("Congratulation " + db.getUsername(), "You are now Verified!", false);
+                    warning_dialog("Congratulation " + db.getUsername(),
+                            "You are now Verified!",
+                            false
+                    );
 
 
                 }
@@ -1472,7 +1487,8 @@ public class dash extends inputs_validation {
 
             try {
 
-                if (visa_or_mastercard.getValue() != null && !credit_card_number.getText().isEmpty() && !credit_card_number.getText().isEmpty()) {
+                if (visa_or_mastercard.getValue() != null && !credit_card_number.getText().isEmpty()
+                        && !credit_card_number.getText().isEmpty()) {
                     if (card_number_v(credit_card_number.getText()) && card_number_cvv_v(credit_card_cvv.getText())) {
                         db.setUse_credit_card(true);
 
@@ -1779,7 +1795,8 @@ public class dash extends inputs_validation {
 
                         citizen_national_id_task.setOnFailed(event1 -> {
                             finish_profile_task_action();
-                            warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+                            warning_dialog("Connecton error", "Failed to save!, please try again later",
+                                    false);
 
 
                         });
@@ -1791,7 +1808,8 @@ public class dash extends inputs_validation {
 
                 id_check_task.setOnFailed(event -> {
                     finish_profile_task_action();
-                    warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+                    warning_dialog("Connecton error", "Failed to save!, please try again later",
+                            false);
 
 
                 });
@@ -1831,7 +1849,8 @@ public class dash extends inputs_validation {
         });
         send_profile_task.setOnFailed(event -> {
             finish_profile_task_action();
-            warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+            warning_dialog("Connecton error", "Failed to save!, please try again later",
+                    false);
         });
         exec.execute(send_profile_task);
 
@@ -1854,7 +1873,8 @@ public class dash extends inputs_validation {
         });
         new_password_task.setOnFailed(event -> {
             finish_profile_task_action();
-            warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+            warning_dialog("Connecton error", "Failed to save!, please try again later",
+                    false);
         });
 
         exec.execute(new_password_task);
@@ -1867,7 +1887,8 @@ public class dash extends inputs_validation {
         if (toggleButton_password_enable.isSelected()) {
 
             try {
-                if (!old_password.getText().isEmpty() && !new_password.getText().isEmpty() && !new_password_retype.getText().isEmpty()) {
+                if (!old_password.getText().isEmpty() && !new_password.getText().isEmpty()
+                        && !new_password_retype.getText().isEmpty()) {
                     Task<char[]> get_password_task = new Task<char[]>() {
                         @Override
                         protected char[] call() throws Exception {
@@ -1880,7 +1901,9 @@ public class dash extends inputs_validation {
 
                             if (Arrays.equals(old_password.getText().toCharArray(), get_password_task.getValue())) {
 
-                                if (password_v(new_password.getText().toCharArray()) && Arrays.equals(new_password.getText().toCharArray(), new_password_retype.getText().toCharArray())) {
+                                if (password_v(new_password.getText().toCharArray())
+                                        && Arrays.equals(new_password.getText().toCharArray(),
+                                        new_password_retype.getText().toCharArray())) {
                                     Task<Void> send_password_task = new Task<Void>() {
                                         @Override
                                         protected Void call() throws Exception {
@@ -1910,7 +1933,10 @@ public class dash extends inputs_validation {
                                         new_password_retype.setPromptText("Confirm New Password");
                                         password_label.setText("Password Changed Successfully");
                                         new_password_save.setDisable(true);
-                                        warning_dialog("Password Changing", "Your password changed sucessfully", false);
+                                        warning_dialog("Password Changing",
+                                                "Your password changed sucessfully",
+                                                false
+                                        );
 
                                     });
 
@@ -1960,7 +1986,9 @@ public class dash extends inputs_validation {
         send_applicatoin_task.setOnSucceeded(event -> update_application_tab());
         send_applicatoin_task.setOnFailed(event -> {
             finish_application_task_action();
-            warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+            warning_dialog("Connecton error", "Failed to save!, please try again later",
+                    false
+            );
         });
         exec.execute(send_applicatoin_task);
 
@@ -1987,7 +2015,9 @@ public class dash extends inputs_validation {
         send_payment_task.setOnFailed(event -> {
 
             finish_payment_task_action();
-            warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+            warning_dialog("Connecton error", "Failed to save!, please try again later",
+                    false
+            );
 
         });
         exec.execute(send_payment_task);
@@ -2001,15 +2031,18 @@ public class dash extends inputs_validation {
         //System.out.println(warning_list);
 
 
-        if ((trips_country_from.getValue() != null) && (trips_country_to.getValue() != null) && (trips_departure.getValue() != null)
+        if ((trips_country_from.getValue() != null) && (trips_country_to.getValue() != null)
+                && (trips_departure.getValue() != null)
                 && (trips_arrival.getValue() != null)) {
 
             Task<Boolean> found_result_task = new Task<Boolean>() {
                 @Override
                 protected Boolean call() throws Exception {
                     start_trip_task_action();
-                    return trip_data.found_result(trips_country_from.getValue(), trips_country_to.getValue(), trips_departure.getValue(),
-                            trips_arrival.getValue());
+                    return trip_data.found_result(trips_country_from.getValue(), trips_country_to.getValue()
+                            , trips_departure.getValue()
+                            , trips_arrival.getValue()
+                    );
                 }
             };
             found_result_task.setOnSucceeded(event -> {
@@ -2076,7 +2109,8 @@ public class dash extends inputs_validation {
 
                             finish_home_task_action();
                             finish_trip_task_action();
-                            warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+                            warning_dialog("Connecton error", "Failed to save!, please try again later",
+                                    false);
 
 
                         });
@@ -2092,7 +2126,8 @@ public class dash extends inputs_validation {
                 send_trips_2_db_task.setOnFailed(event -> {
 
                     finish_trip_task_action();
-                    warning_dialog("Connecton error", "Failed to save!, please try again later", false);
+                    warning_dialog("Connecton error", "Failed to save!, please try again later",
+                            false);
                 });
 
                 exec.execute(send_trips_2_db_task);
@@ -2234,7 +2269,8 @@ public class dash extends inputs_validation {
         requests_column_state.setCellValueFactory(new TreeItemPropertyValueFactory("request_state"));
         requests_column_valid_until.setCellValueFactory(new TreeItemPropertyValueFactory("request_end"));
 
-        TreeItem<customer_validation_time> root1 = new RecursiveTreeItem<customer_validation_time>(customervalidationtime_ObservableList, RecursiveTreeObject::getChildren);
+        TreeItem<customer_validation_time> root1 = new RecursiveTreeItem<customer_validation_time>
+                (customervalidationtime_ObservableList, RecursiveTreeObject::getChildren);
 
         requests_table.getColumns().setAll(
 
@@ -2358,7 +2394,10 @@ public class dash extends inputs_validation {
             } else {
 
                 citizen_customer_status_false();
-                warning_dialog("Opps! " + db.getUsername(), "Your National ID not Verified yet!", false);
+                warning_dialog("Opps! " + db.getUsername(),
+                        "Your National ID not Verified yet!",
+                        false
+                );
 
 
             }
@@ -2376,15 +2415,16 @@ public class dash extends inputs_validation {
     private void citizen_customer_status_true() {
 
 
-        Task<ObservableList<customer_validation_time>> observableListTask = new Task<ObservableList<customer_validation_time>>() {
-            @Override
-            protected ObservableList<customer_validation_time> call() throws Exception {
-                start_home_task_action();
-                customer_validation_time_object.request_history(db.getUsername());
+        Task<ObservableList<customer_validation_time>> observableListTask =
+                new Task<ObservableList<customer_validation_time>>() {
+                    @Override
+                    protected ObservableList<customer_validation_time> call() throws Exception {
+                        start_home_task_action();
+                        customer_validation_time_object.request_history(db.getUsername());
 
-                return customer_validation_time_object.getCustomer_validation_times();
-            }
-        };
+                        return customer_validation_time_object.getCustomer_validation_times();
+                    }
+                };
 
         observableListTask.setOnSucceeded(e -> {
 
