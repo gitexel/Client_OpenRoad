@@ -17,7 +17,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -43,8 +42,6 @@ import java.util.concurrent.Executors;
  */
 
 public class dash extends inputs_validation {
-
-
 
 
     //objects
@@ -302,7 +299,7 @@ public class dash extends inputs_validation {
     private Executor exec; // java.util.concurrent.Executor typically provides a pool of threads...
     private Task<Boolean> valid_citizen_task = null;
     private Task<Void> update_profile_task, update_application_task, update_payment_task;
-    private final String icon_url ="file:"+System.getProperty("user.dir")+separator+"src"+separator+"icon.png";
+    private final String icon_url = "file:" + System.getProperty("user.dir") + separator + "src" + separator + "icon.png";
 
     public dash() {
 
@@ -317,7 +314,8 @@ public class dash extends inputs_validation {
     public void initialize() {
         fname.textProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue, String newValue) {
+            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue,
+                                String newValue) {
                 if (!oldValue.isEmpty()) {
                     ch_fname = true;
                     psave.setDisable(false);
@@ -326,7 +324,8 @@ public class dash extends inputs_validation {
         });
         mname.textProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue, String newValue) {
+            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue,
+                                String newValue) {
                 if (!oldValue.isEmpty()) {
                     ch_mname = true;
                     psave.setDisable(false);
@@ -335,7 +334,8 @@ public class dash extends inputs_validation {
         });
         lname.textProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue, String newValue) {
+            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue,
+                                String newValue) {
 
                 if (!oldValue.isEmpty()) {
                     ch_lname = true;
@@ -345,7 +345,8 @@ public class dash extends inputs_validation {
         });
         email.textProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue, String newValue) {
+            public void changed(ObservableValue<? extends String> observable, @NotNull String oldValue,
+                                String newValue) {
 
                 if (!oldValue.isEmpty()) {
                     ch_email = true;
@@ -368,7 +369,8 @@ public class dash extends inputs_validation {
 
         phone.textProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(@NotNull ObservableValue<? extends String> observable, @NotNull String oldValue, String newValue) {
+            public void changed(@NotNull ObservableValue<? extends String> observable, @NotNull String oldValue,
+                                String newValue) {
                 if (!oldValue.isEmpty()) {
                     ch_phone = true;
                     psave.setDisable(false);
@@ -378,7 +380,8 @@ public class dash extends inputs_validation {
         });
         country.valueProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, @Nullable String oldValue, String newValue) {
+            public void changed(ObservableValue<? extends String> observable, @Nullable String oldValue,
+                                String newValue) {
                 if (oldValue != null) {
                     ch_country = true;
                     psave.setDisable(false);
@@ -388,7 +391,8 @@ public class dash extends inputs_validation {
         });
         datePicker.valueProperty().addListener(new ChangeListener<LocalDate>() {
             @Override
-            public void changed(ObservableValue<? extends LocalDate> observable, @Nullable LocalDate oldValue, LocalDate newValue) {
+            public void changed(ObservableValue<? extends LocalDate> observable, @Nullable LocalDate oldValue,
+                                LocalDate newValue) {
                 if (oldValue != null) {
                     ch_birthday = true;
                     psave.setDisable(false);
@@ -409,7 +413,8 @@ public class dash extends inputs_validation {
                 "3.The payment tab is just a prototype!, but you need to fill just one method.\n" +
                 "4.you will fill application only once until your validation status expired.\n" +
                 "5.application and payments inputs should be marked as valid from employer side!.\n" +
-                "    and we don't have yet employer side app so validation for inputs will \n be automatically marked as valid!.\n" +
+                "    and we don't have yet employer side app so validation for inputs will \n " +
+                "be automatically marked as valid!.\n" +
                 "6. you can change your profile photo after you got verified.", false);
 
 
@@ -433,14 +438,16 @@ public class dash extends inputs_validation {
                 Combo_from_country(country_list);
                 Combo_to_country(country_list);
             } else {
-                warning_dialog("Warning", "The service not avilable now!, please try again later.", false);
+                warning_dialog("Warning", "The service not avilable now!, please try again later.",
+                        false);
             }
 
         });
 
         get_country_db_task.setOnFailed(event -> {
             //    finish_profile_task_action();
-            warning_dialog("Warning", "Faild to connect to the server!, please try again later.", false);
+            warning_dialog("Warning", "Faild to connect to the server!, please try again later.",
+                    false);
 
 
         });
@@ -629,7 +636,8 @@ public class dash extends inputs_validation {
     @FXML
     private void open_photo_id() {
 
-        id_path = file_chooser("Choose Id-Image", new FileChooser.ExtensionFilter("Image file", "*.png", "*.jpg", "*.gif"));
+        id_path = file_chooser("Choose Id-Image", new FileChooser.ExtensionFilter("Image file",
+                "*.png", "*.jpg", "*.gif"));
 
         if (series) {
             idphotfilename.setText(filename);
@@ -731,34 +739,23 @@ public class dash extends inputs_validation {
 
                         try {
 
-                            main_profile_image.setImage(new Image("file:"+ System.getProperty("user.home") + separator +".openroad_files"+ separator + db.getUsername() + "profile.png", true));
+                            main_profile_image.setImage(new Image("file:" + System.getProperty("user.home") +
+                                    separator + ".openroad_files" + separator + db.getUsername() + "profile.png",
+                                    true));
 
                         } catch (Exception e) {
                         }
 
                         try {
-                            profile_image.setImage(new Image("file:"+ System.getProperty("user.home") + separator +".openroad_files" + separator + db.getUsername() + "profile.png", true));
+                            profile_image.setImage(new Image("file:" + System.getProperty("user.home") +
+                                    separator + ".openroad_files" + separator + db.getUsername() + "profile.png",
+                                    true));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
 
-                    } else {
-                       /* try {
-
-                            main_profile_image.setImage(new Image("file:"+separator+separator+ System.getProperty("user.dir") +separator+"src"+separator+"Client_OpenRoad"+separator+"resources"+separator+"default-profile.png", true));
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        try {
-
-                            profile_image.setImage(new Image("file:"+separator+separator+ System.getProperty("user.dir") +separator+"src"+separator+"Client_OpenRoad"+separator+"resources"+separator+"default-profile.png", true));
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-*/
                     }
+
 
                     finish_home_task_action();
 
@@ -843,7 +840,8 @@ public class dash extends inputs_validation {
                     });
 
                     citizen_customer_status_task.setOnFailed(event2 -> {
-                        warning_dialog("Connection Error", "Faild to connect to the server", false);
+                        warning_dialog("Connection Error",
+                                "Faild to connect to the server", false);
                         finish_profile_task_action();
                     });
                     exec.execute(citizen_customer_status_task);
@@ -853,7 +851,8 @@ public class dash extends inputs_validation {
         );
         update_profile_task.setOnFailed(event -> {
             finish_profile_task_action();
-            warning_dialog("Connecton error - update profile tab", "Faild to connect to the server!, please try again later", false);
+            warning_dialog("Connecton error - update profile tab",
+                    "Faild to connect to the server!, please try again later", false);
 
         });
         exec.execute(update_profile_task);
@@ -965,7 +964,8 @@ public class dash extends inputs_validation {
         update_application_task.setOnFailed(event -> {
 
             finish_application_task_action();
-            warning_dialog("Connecton error - update application", "Faild to connect to the server!, please try again later", false);
+            warning_dialog("Connecton error - update application",
+                    "Faild to connect to the server!, please try again later", false);
 
         });
 
@@ -1059,7 +1059,8 @@ public class dash extends inputs_validation {
 
         update_payment_task.setOnFailed(event -> {
             finish_payment_task_action();
-            warning_dialog("Connecton error = update payment tab", "Faild to connect to the server!, please try again later", false);
+            warning_dialog("Connecton error = update payment tab",
+                    "Faild to connect to the server!, please try again later", false);
 
         });
 
@@ -2192,7 +2193,8 @@ public class dash extends inputs_validation {
         if (!stuffTableView.getSelectionModel().isEmpty()) {
             int selected_row_num = stuffTableView.getSelectionModel().getSelectedIndex();
             trips row_value = stuffTableView.getTreeItem(selected_row_num).getValue();
-            trip_details.setText(row_value.getTrip_type_way() + " Class " + " | From " + row_value.getAirport_name_from() + " To " + row_value.getAirport_name_to() +
+            trip_details.setText(row_value.getTrip_type_way() + " Class " + " | From "
+                    + row_value.getAirport_name_from() + " To " + row_value.getAirport_name_to() +
                     " | It Costs " + row_value.getPrice() + " $"
             );
 
