@@ -26,6 +26,24 @@ public class login extends inputs_validation {
     private Executor exec;
     private Task<Boolean> validation_login_task;
     private @NotNull String error_message = "Incorrect Username or Passowrd!";
+    private sign_up show_sign; //controller for Sign up
+    private dash show_dash;
+    @FXML
+    private JFXTextField username;
+    @FXML
+    private JFXPasswordField password;
+    @FXML
+    private Label error1;  // error
+    @FXML
+    private Group group1;
+    @FXML
+    private JFXButton signup;
+    @FXML
+    private JFXButton login1, minmize;
+    @FXML
+    private JFXButton close;
+    @FXML
+    private ProgressIndicator prograssindicator;
 
     public login() {
     }
@@ -54,25 +72,6 @@ public class login extends inputs_validation {
 
         } else return null;
     }
-
-    private sign_up show_sign; //controller for Sign up
-    private dash show_dash;
-    @FXML
-    private JFXTextField username;
-    @FXML
-    private JFXPasswordField password;
-    @FXML
-    private Label error1;  // error
-    @FXML
-    private Group group1;
-    @FXML
-    private JFXButton signup;
-    @FXML
-    private JFXButton login1, minmize;
-    @FXML
-    private JFXButton close;
-    @FXML
-    private ProgressIndicator prograssindicator;
 
     private void loading_on() {
         error_message = "Incorrect Username or Passowrd!"; //reset error message
@@ -106,7 +105,6 @@ public class login extends inputs_validation {
                 validation_login_task = new Task<Boolean>() {
                     @Override
                     protected Boolean call() throws Exception {
-                        Thread.sleep(500);
                         return validate_login();
                     }
                 };
@@ -143,8 +141,9 @@ public class login extends inputs_validation {
         PreparedStatement pst = null;
         try {
             pst = connection().prepareStatement("Select opr.customer.username from opr.customer where username=? and password=?");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             error_message = "Faild to connect to the Server";
+            System.out.println(e);
             return false;
         }
         pst.setString(1, PassAuth.getUserName());
