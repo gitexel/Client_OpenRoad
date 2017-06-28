@@ -19,6 +19,12 @@ public class db_use_info {
     String username ;
     String password ;
 
+    public db_use_info() {
+
+        load_file();
+
+    }
+
     boolean every_things_going_ok(){
 
         if(driver != null && url !=null && username != null && password !=null ) {
@@ -31,7 +37,7 @@ public class db_use_info {
 
         props =  new Properties();
         try {
-            in = new FileInputStream(System.getProperty("user.dir")+fileSseparator+"db_settings"+fileSseparator+"db.properties");
+            in = new FileInputStream(System.getProperty("user.dir") + fileSseparator + "settings" + fileSseparator + "db.properties");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -54,12 +60,6 @@ public class db_use_info {
          username = props.getProperty("jdbc.username");
          password = props.getProperty("jdbc.password");
     }
-    public db_use_info() {
-
-        load_file();
-
-    }
-
 
     public String getDriver() {
         return driver;
