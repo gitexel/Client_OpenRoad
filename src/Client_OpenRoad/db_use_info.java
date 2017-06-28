@@ -31,7 +31,7 @@ public class db_use_info {
 
         props =  new Properties();
         try {
-            in = new FileInputStream(System.getProperty("user.dir")+fileSseparator+"db_settings"+fileSseparator+"db.properties");
+            in = new FileInputStream(System.getProperty("user.dir")+fileSseparator+"settings"+fileSseparator+"db.properties");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
