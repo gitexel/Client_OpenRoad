@@ -13,11 +13,11 @@ public class db_use_info {
 
     final char fileSseparator = File.separatorChar;
     Properties props;
-    FileInputStream in ;
-    String driver ;
-    String url ;
-    String username ;
-    String password ;
+    FileInputStream in;
+    String driver;
+    String url;
+    String username;
+    String password;
 
     public db_use_info() {
 
@@ -25,17 +25,13 @@ public class db_use_info {
 
     }
 
-    boolean every_things_going_ok(){
-
-        if(driver != null && url !=null && username != null && password !=null ) {
-            return true;
-        }
-        else return false;
+    boolean every_things_going_ok() {
+        return (driver != null && url != null && username != null && password != null);
     }
 
-    private void load_file(){
+    private void load_file() {
 
-        props =  new Properties();
+        props = new Properties();
         try {
             in = new FileInputStream(System.getProperty("user.dir") + fileSseparator + "settings" + fileSseparator + "db.properties");
         } catch (FileNotFoundException e) {
@@ -55,10 +51,10 @@ public class db_use_info {
         }
 
 
-         driver = props.getProperty("jdbc.driver");
-         url = props.getProperty("jdbc.url");
-         username = props.getProperty("jdbc.username");
-         password = props.getProperty("jdbc.password");
+        driver = props.getProperty("jdbc.driver");
+        url = props.getProperty("jdbc.url");
+        username = props.getProperty("jdbc.username");
+        password = props.getProperty("jdbc.password");
     }
 
     public String getDriver() {
