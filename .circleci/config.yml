@@ -1,0 +1,9 @@
+version: 1
+jobs:
+   build:
+     working_directory: ~/src
+     docker:
+       - image: circleci/openjdk
+     steps:
+       - checkout
+       - run: echo "hello world"
