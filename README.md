@@ -124,7 +124,7 @@ after you booked the trip the main table should update to this
 ![screenshot from 2017-05-30 09-59-52](https://cloud.githubusercontent.com/assets/14273726/26575721/0a948074-452f-11e7-8721-cebf0b39288d.png)
 
 
-Download the executable jar [OpenRoad.zip](https://github.com/gitexel/Client_OpenRoad/files/1037826/OpenRoad.zip)
+Download the executable jar [OpenRoad.1.0.alpha.zip](https://github.com/gitexel/Client_OpenRoad/files/1134205/OpenRoad.1.0.alpha.zip)
 
 
 For more info please contact me (googexel@gmail.com)
