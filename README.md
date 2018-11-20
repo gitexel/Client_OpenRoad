@@ -54,11 +54,6 @@ Fill citizen database table to compare it later with the profile tab info
 
 Note! all names should be lowercase in the citizen DB
 
-The database diagram
-
-
-![db_diagram_17-4-2017](https://cloud.githubusercontent.com/assets/14273726/26574995/30b80e86-452c-11e7-9949-ff3333fe0fa0.png)
-
 
 database.sql [Data_Base_opr.zip](https://github.com/gitexel/Client_OpenRoad/files/1037678/Data_Base_opr.zip)
 
